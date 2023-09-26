@@ -6,5 +6,11 @@ namespace mba.basquet {
         public DbSet<Division> Divisions { get; set; }
         public DbSet<Team> Teams { get; set; }
         
+        public DbSet<Competes> Competes { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CompetesConfiguration());
+        }
     }
 }
